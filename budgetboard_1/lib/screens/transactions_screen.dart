@@ -46,7 +46,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                 color: Color(0xFFF7F7F4),
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: GridWidget(transactionData: [...transactionData, ...transactionData])
+              child: GridWidget(transactionData: transactionData)
             ),
           ),
         ],
