@@ -1,8 +1,6 @@
 import 'package:budgetboard_1/models/transaction.model.dart';
 import 'package:budgetboard_1/services/transaction.service.dart';
-import 'package:budgetboard_1/widgets/gridRow_widget.dart';
 import 'package:budgetboard_1/widgets/grid_widget.dart';
-import 'package:budgetboard_1/widgets/icon_widget.dart';
 import 'package:material_ui/material_ui.dart';
 
 class TransactionsScreen extends StatefulWidget {
@@ -48,7 +46,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                 color: Color(0xFFF7F7F4),
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: GridWidget(transactionData: transactionData)
+              child: GridWidget(transactionData: [...transactionData, ...transactionData])
             ),
           ),
         ],

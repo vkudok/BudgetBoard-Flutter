@@ -1,6 +1,6 @@
 import 'package:budgetboard_1/models/transaction.model.dart';
 import 'package:budgetboard_1/widgets/gridRow_widget.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class GridWidget extends StatelessWidget {
   const GridWidget({super.key, required this.transactionData});
@@ -9,12 +9,14 @@ class GridWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: transactionData.length,
-      itemBuilder: (context, index) {
-        final transaction = transactionData[index];
-        return GridrowWidget(transaction: transaction);
-      },
+    return Scrollbar(
+      child: ListView.builder(
+        itemCount: transactionData.length,
+        itemBuilder: (context, index) {
+          final transaction = transactionData[index];
+          return GridrowWidget(transaction: transaction);
+        },
+      ),
     );
   }
 }
