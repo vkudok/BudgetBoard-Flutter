@@ -1,5 +1,5 @@
 import 'package:budgetboard_1/models/transaction.model.dart';
-import 'package:budgetboard_1/widgets/icon_widget.dart';
+import 'package:budgetboard_1/widgets/icon.dart';
 import 'package:intl/intl.dart';
 import 'package:material_ui/material_ui.dart';
 
