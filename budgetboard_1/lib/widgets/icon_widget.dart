@@ -10,15 +10,23 @@ class IconWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 40,
+      height: 40,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
-        color: type == TransactionType.income ? Color(0xFFE3F3E6) : Color(0xFFFBE8E9),
+        color: type == TransactionType.income
+            ? Color(0xFFE3F3E6)
+            : Color(0xFFFBE8E9),
       ),
       child: Padding(
         padding: EdgeInsets.all(5),
         child: Icon(
-          type == TransactionType.income ? Icons.arrow_upward : Icons.arrow_downward,
-          color: type == TransactionType.income ? Color(0xFF2E9B49) : Color(0xFFE05259),
+          type == TransactionType.income
+              ? Icons.arrow_upward
+              : Icons.arrow_downward,
+          color: type == TransactionType.income
+              ? Color(0xFF2E9B49)
+              : Color(0xFFE05259),
         ),
       ),
     );

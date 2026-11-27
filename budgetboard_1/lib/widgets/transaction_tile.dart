@@ -1,18 +1,21 @@
 import 'package:budgetboard_1/models/transaction.model.dart';
 import 'package:budgetboard_1/widgets/icon_widget.dart';
+import 'package:intl/intl.dart';
 import 'package:material_ui/material_ui.dart';
 
-class GridrowWidget extends StatelessWidget {
-  const GridrowWidget({super.key, required this.transaction});
+class TransactionTile extends StatelessWidget {
+  const TransactionTile({super.key, required this.transaction});
   final Transaction transaction;
 
   @override
   Widget build(BuildContext context) {
-    final amount = transaction.amount.toString();
+    final formatter = NumberFormat('#,##0.##', 'ru');
+    final amount = formatter.format(transaction.amount);
     final comment = transaction.comment;
 
     var category = transaction.category;
-    if (category == '-' && transaction.type == TransactionType.income) {
+    if ((category == '-' || category == null) &&
+        transaction.type == TransactionType.income) {
       category = 'Поступление средств';
     }
     return Padding(

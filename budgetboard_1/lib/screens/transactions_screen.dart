@@ -36,20 +36,37 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Транзакции')),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFFF7F7F4),
-                borderRadius: BorderRadius.circular(16),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFF10232D)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+                decoration: BoxDecoration(color: Color(0xFF10232D)),
+                child: Column(
+                  children: [
+                    Text(
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      'BudgetBoard',
+                    ),
+                  ],
+                ),
               ),
-              child: GridWidget(transactionData: transactionData)
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFFF7F7F4),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: GridWidget(transactionData: transactionData),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
